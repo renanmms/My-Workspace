@@ -1,0 +1,18 @@
+﻿@using HTML_Tag_Helper.Models
+@model SportModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<form asp-controller="Home" asp-action="Index" method="post">
+    <h2>Qual o seu esporte favorito?</h1>
+    <input name="Name" type="text">
+
+    <h2>A quantos anos você pratica?</h1>
+    <input name="Years" type="number">
+    <br />
+    <input type="submit" value="Enviar">
+
+    <input type="hidden" name="Name" />
+    <input type="hidden" name="Years" />
+</form>
