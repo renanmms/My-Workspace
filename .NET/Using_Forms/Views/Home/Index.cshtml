@@ -5,11 +5,20 @@
 }
 
 <form asp-controller="Home" asp-action="Index" method="post">
-    <h2>Qual o seu esporte favorito?</h1>
-    <input name="Name" type="text">
+    <div class="row">
+        <h2>Qual o seu esporte favorito?</h1>
+        <input name="Name" type="text">
+        <span asp-validation-for="Name" class="text-danger"></span>
 
-    <h2>A quantos anos você pratica?</h1>
-    <input name="Years" type="number">
+        <h2>A quantos anos você pratica?</h1>
+        <br />
+        <input name="Years" type="number">
+        <span asp-validation-for="Years" class="text-danger"></span>
+
+        <h2>Pretende participar do torneio esse ano?</h2>
+        <input type="radio">
+        
+    </div>
     <br />
     <input type="submit" value="Enviar">
 
