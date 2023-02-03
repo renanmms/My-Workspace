@@ -23,7 +23,7 @@ public class HomeController : Controller
     {
         Console.WriteLine($"Nome do esporte: {model.Name}");
         Console.WriteLine($"Anos praticando: {model.Years}");
-        Console.WriteLine($"Está participante do torneio: {model.vaiParticiparDoTorneio}");
+        Console.WriteLine($"Está participando do torneio: {model.vaiParticiparDoTorneio}");
         return View(model);
     }
 

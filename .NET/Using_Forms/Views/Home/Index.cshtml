@@ -14,19 +14,18 @@
         <br />
         <input name="Years" type="number">
         <span asp-validation-for="Years" class="text-danger"></span>
-
-        
     </div>
     <h2>Pretende participar do torneio esse ano?</h2>
-    <input name="vaiParticiparDoTorneio" value="true" type="radio"/>
+    <input asp-for="vaiParticiparDoTorneio" value="true" type="radio"/>
     <label for="vaiParticiparDoTorneio"> Sim </label>
     <br />
-    <input name="vaiParticiparDoTorneio" value="false" type="radio"/>
+    <input asp-for="vaiParticiparDoTorneio" value="false" type="radio"/>
     <label for="vaiParticiparDoTorneio"> Não </label>
     <br />
+    <span asp-validation-for="vaiParticiparDoTorneio" class="text-danger"></span>
     <input type="submit" value="Enviar">
 
     <input type="hidden" name="Name" />
     <input type="hidden" name="Years" />
-    <input type="hidden" name="vaiParticiparDoTorneio">
+    <input type="hidden" name="vaiParticiparDoTorneio" />
 </form>
