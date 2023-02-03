@@ -8,4 +8,6 @@ public class SportModel {
     
     [Required(ErrorMessage = "A quantidade de anos é obrigatória!")]
     public int? Years { get; set; }
+
+    public bool vaiParticiparDoTorneio { get; set; }
 }
