@@ -1,0 +1,22 @@
+{
+  "name": "working_with_tables",
+  "version": "1.0.0",
+  "description": "example of a jquery call to work with tables",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "My-Workspace"
+  },
+  "keywords": [
+    "table",
+    "jquery"
+  ],
+  "author": "renanmms",
+  "license": "ISC",
+  "dependencies": {
+    "jquery": "^3.7.0"
+  }
+}
