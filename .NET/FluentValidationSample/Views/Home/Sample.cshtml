@@ -1,0 +1,56 @@
+@model FluentValidationSample.Models.Party
+
+@{
+    ViewData["Title"] = "Create Party";
+}
+
+<h1>Create Party</h1>
+
+<form asp-action="Sample" method="post">
+    <h2>Guests</h2>
+    <div id="guests-container">
+        @for (var i = 0; i < Model.Guests.Count; i++)
+        {
+            <div class="guest">
+                <label asp-for="Guests[i].Name">Name:</label>
+                <input asp-for="Guests[i].Name" class="form-control" />
+                <span asp-validation-for="Guests[i].Name" class="text-danger"></span>
+
+                <label asp-for="Guests[i].Age">Age:</label>
+                <input asp-for="Guests[i].Age" class="form-control" />
+                <span asp-validation-for="Guests[i].Age" class="text-danger"></span>
+            </div>
+        }
+    </div>
+
+    <button type="button" id="add-guest-btn" class="btn btn-primary">Add Guest</button>
+
+    <button type="submit" class="btn btn-primary">Create Party</button>
+</form>
+
+@section Scripts {
+    <script>
+        // Function to add a new guest form
+        function addGuestForm() {
+            var container = document.getElementById('guests-container');
+            var index = container.children.length; // Get the number of existing guests
+            var guestHtml = `
+                <div class="guest">
+                    <label for="Guests[${index}].Name">Name:</label>
+                    <input type="text" id="Guests[${index}].Name" name="Guests[${index}].Name" class="form-control" />
+                    <span class="text-danger" id="Guests[${index}].Name-error"></span>
+
+                    <label for="Guests[${index}].Age">Age:</label>
+                    <input type="text" id="Guests[${index}].Age" name="Guests[${index}].Age" class="form-control" />
+                    <span class="text-danger" id="Guests[${index}].Age-error"></span>
+                </div>
+            `;
+            container.insertAdjacentHTML('beforeend', guestHtml);
+        }
+
+        // Event listener for the "Add Guest" button
+        document.getElementById('add-guest-btn').addEventListener('click', function () {
+            addGuestForm();
+        });
+    </script>
+}
